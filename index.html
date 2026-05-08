@@ -196,7 +196,11 @@
                     <h3 style="font-size: 2rem; margin-bottom: 20px; color: var(--primary);">充滿驚喜與溫情的親子喜劇</h3>
                     <p>這是一齣關於親情、陪伴與成長的劇目。透過葉爸爸與女兒葉霏霏之間趣味橫生的日常互動，結合高超的雜耍特技與默劇元素，帶領觀眾進入一個笑中帶淚的奇幻世界。</p>
                     <p>適合全家大小一同觀賞，讓愛與歡笑在劇場中蔓延，成為最美好的家庭回憶。</p>
-                    <a href="https://youtu.be/DWxjYzUXxSg?si=eGP-qQNQg9RpMxKn" target="_blank" class="btn btn-primary mt-4">演出精華</a>
+                    <div class="cta-wrapper mt-4">
+                        <a href="https://youtu.be/DWxjYzUXxSg?si=eGP-qQNQg9RpMxKn" target="_blank"
+                            class="btn btn-primary">演出精華</a>
+                        <a href="yepapa-details.html" class="btn btn-outline">節目介紹</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -222,11 +226,20 @@
                         <div class="simple-slider" style="position: relative; padding-bottom: 65%; height: 0; overflow: hidden;
                                     border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.25);
                                     border: 4px solid var(--white);">
-                            <div class="slide-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden;">
-                                <div class="slide active" style="background-image: url('圖片/青蛙/幻燈/文山14.jpg'); background-size: cover; background-position: center;"></div>
-                                <div class="slide" style="background-image: url('圖片/青蛙/幻燈/文山25.jpg'); background-size: cover; background-position: center;"></div>
-                                <div class="slide" style="background-image: url('圖片/青蛙/幻燈/文山26.jpg'); background-size: cover; background-position: center;"></div>
-                                <div class="slide" style="background-image: url('圖片/青蛙/幻燈/文山35.jpg'); background-size: cover; background-position: center;"></div>
+                            <div class="slide-container"
+                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden;">
+                                <div class="slide active"
+                                    style="background-image: url('圖片/青蛙/幻燈/文山14.jpg'); background-size: cover; background-position: center;">
+                                </div>
+                                <div class="slide"
+                                    style="background-image: url('圖片/青蛙/幻燈/文山25.jpg'); background-size: cover; background-position: center;">
+                                </div>
+                                <div class="slide"
+                                    style="background-image: url('圖片/青蛙/幻燈/文山26.jpg'); background-size: cover; background-position: center;">
+                                </div>
+                                <div class="slide"
+                                    style="background-image: url('圖片/青蛙/幻燈/文山35.jpg'); background-size: cover; background-position: center;">
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -236,7 +249,11 @@
                         <p style="font-size: 1.1rem; line-height: 1.9; color: var(--text-main); margin-bottom: 30px;">
                             作品發想自繪本『一顆奇特的蛋』，故事中想表達小朋友對於事物還不太熟悉時，遇到沒見過的事物可愛的小腦袋裡會用他們自己所了解的方式來做解釋。可愛又天真的寓意，如同小丑演出中的自己身處在困境中，但小丑表演者還是會以用自己的生活哲學找到快樂的泉源。
                         </p>
-                        <a href="https://youtu.be/X12ojb3VNxc?si=KZHHx0N4_kPAdj0s" target="_blank" class="btn btn-primary">演出精華</a>
+                        <div class="cta-wrapper">
+                            <a href="https://youtu.be/X12ojb3VNxc?si=KZHHx0N4_kPAdj0s" target="_blank"
+                                class="btn btn-primary">演出精華</a>
+                            <a href="threefrogs-details.html" class="btn btn-outline">節目介紹</a>
+                        </div>
                     </div>
 
                 </div>
@@ -249,16 +266,36 @@
     <section id="yugong" class="programs section-padding bg-light">
         <div class="container">
             <h2 class="section-title text-center reveal">愚公 <span>移山</span></h2>
-            <div class="about-grid" style="margin-top: 50px;">
-                <div class="about-text reveal-left">
-                    <h3 style="font-size: 2rem; margin-bottom: 20px; color: var(--primary);">傳承與堅持的現代馬戲演繹</h3>
-                    <p>顛覆傳統寓言故事的刻板印象，Mr.YES 以小丑特有的幽默感與誇張的肢體喜劇，重新詮釋「愚公移山」的故事。</p>
-                    <p>在歡笑聲中，傳遞出只要堅持不懈，即使是最微小的力量也能撼動大山的深刻意涵。這是一場結合了雜耍、特技與人生哲理的精彩大秀。</p>
+
+            <!-- 三欄：照片 - 文案 - 照片 -->
+            <div class="yugong-tricolumn reveal" style="display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 30px; align-items: center; margin: 50px 0;">
+
+                <!-- 左邊照片 -->
+                <div class="reveal-left" style="border-radius: var(--radius-md); overflow: hidden; aspect-ratio: 3/4; box-shadow: var(--shadow-solid); border: 4px solid var(--white);">
+                    <!-- 圖片可替換為 Dropbox 連結 -->
+                    <img src="images/course_1.png" alt="微笑姊姊" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
                 </div>
-                <div class="about-image-wrapper reveal-right">
-                    <div class="about-image" style="background-image: url('images/course_1.png');"></div>
-                    <div class="about-shape"></div>
+
+                <!-- 中間文案 -->
+                <div class="text-center reveal" style="padding: 20px 10px;">
+                    <h3 style="font-size: 1.9rem; margin-bottom: 20px; color: var(--primary);">雙人爆笑故事劇</h3>
+                    <p style="font-weight: bold; color: var(--secondary); font-size: 1.15rem; margin-bottom: 15px;">史上最鬧「撞場」事件！當安靜故事遇上失控馬戲？💥</p>
+                    <p style="font-size: 1rem; color: var(--text-main); line-height: 1.9; margin-bottom: 15px;">糟糕！場地租借鬧雙胞？😱 這個兒童節，中原文創園區發生了一件大事！</p>
+                    <div style="background: rgba(244,196,48,0.15); border-radius: var(--radius-sm); padding: 20px; margin-bottom: 15px; text-align: left;">
+                        <p style="margin-bottom: 12px; line-height: 1.8; font-size: 0.95rem;">👈 <b>【左邊舞台】</b> 氣質滿分的 「微笑姊姊」 帶著會發光的魔法書登場，正準備輕聲細語地為大家講述《愚公移山》的故事...🌙</p>
+                        <p style="margin-bottom: 0; line-height: 1.8; font-size: 0.95rem;">👉 <b>【右邊舞台】</b> 「Mr.YES 小丑劇團」 卻突然闖入！葉爸爸背著霏霏，以為今天是他們的《親子馬戲》主場，哨子聲、雜耍拋接吵翻天！🎉</p>
+                    </div>
+                    <div class="cta-wrapper" style="justify-content: center;">
+                        <a href="yugong-details.html" class="btn btn-primary">節目介紹</a>
+                    </div>
                 </div>
+
+                <!-- 右邊照片 -->
+                <div class="reveal-right" style="border-radius: var(--radius-md); overflow: hidden; aspect-ratio: 3/4; box-shadow: var(--shadow-solid); border: 4px solid var(--white);">
+                    <!-- 圖片可替換為 Dropbox 連結 -->
+                    <img src="images/performance_2.png" alt="Mr.YES 小丑劇團" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                </div>
+
             </div>
         </div>
     </section>
@@ -273,6 +310,16 @@
                     <div class="icon-wrapper">🎭</div>
                     <h3>專案演出</h3>
                     <p>為您的企業尾牙、品牌發表會、或是私人派對客製化專屬表演。我們提供從節目編排到現場執行的一條龍服務，確保活動完美呈現。</p>
+                    
+                    <!-- 專案演出 幻燈片 -->
+                    <div class="simple-slider" style="position: relative; padding-bottom: 60%; height: 0; overflow: hidden; border-radius: 15px; margin: 20px 0; background: var(--darker);">
+                        <div class="slide-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden;">
+                            <!-- TODO: 待替換為真實照片連結 -->
+                            <div class="slide active" style="background-image: url('images/course_1.png'); background-size: cover; background-position: center;"></div>
+                            <div class="slide" style="background-image: url('images/performance_2.png'); background-size: cover; background-position: center;"></div>
+                        </div>
+                    </div>
+
                     <a href="#contact" class="text-link">了解詳情 &rarr;</a>
                 </div>
 
@@ -280,6 +327,16 @@
                     <div class="icon-wrapper">🤹</div>
                     <h3>教學課程</h3>
                     <p>想親自體驗雜耍的樂趣嗎？我們提供兒童雜耍夏令營、成人紓壓雜耍班，甚至是企業團隊建立 (Team Building) 課程。在歡笑中學習新技能！</p>
+                    
+                    <!-- 教學課程 幻燈片 -->
+                    <div class="simple-slider" style="position: relative; padding-bottom: 60%; height: 0; overflow: hidden; border-radius: 15px; margin: 20px 0; background: var(--darker);">
+                        <div class="slide-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden;">
+                            <!-- TODO: 待替換為真實照片連結 -->
+                            <div class="slide active" style="background-image: url('images/01.png'); background-size: cover; background-position: center;"></div>
+                            <div class="slide" style="background-image: url('images/02.png'); background-size: cover; background-position: center;"></div>
+                        </div>
+                    </div>
+
                     <a href="#contact" class="text-link">報名課程 &rarr;</a>
                 </div>
 
@@ -290,49 +347,35 @@
     <!-- Contact Section -->
     <section id="contact" class="contact section-padding bg-light">
         <div class="container">
-            <div class="contact-card reveal">
-                <div class="contact-info">
-                    <h2>合作 <span>邀約</span></h2>
-                    <p>無論是演出邀請、課程合作，或是任何瘋狂的點子，我們都非常樂意聆聽！</p>
+            <div class="reveal" style="text-align: center; max-width: 680px; margin: 0 auto;">
+                <h2 class="section-title">合作 <span>邀約</span></h2>
+                <p style="font-size: 1.15rem; color: var(--text-main); margin-bottom: 50px; line-height: 1.9;">無論是演出邀請、課程合作，或是任何瘋狂的點子，<br>我們都非常樂意聆聽！歡迎透過 LINE 直接與我們聯繫 💬</p>
 
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <span class="icon">✉️</span>
-                            <a href="mailto:h123yes0112@gmail.com?subject=邀請一場奇幻旅程"
-                                class="contact-link">h123yes0112@gmail.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <span class="icon">📞</span>
-                            <a href="tel:0917619613" class="contact-link">0917-619-613 (葉團長)</a>
-                        </div>
-                        <div class="contact-item">
-                            <span class="icon">💬</span>
-                            <a href="#" class="btn btn-outline" style="margin-top: 10px;">加入 LINE 官方帳號</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" onsubmit="event.preventDefault(); alert('訊息已送出！我們將盡快與您聯繫。');">
-                        <div class="form-group">
-                            <input type="text" placeholder="您的姓名 / 單位" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="聯絡信箱" required>
-                        </div>
-                        <div class="form-group">
-                            <select required>
-                                <option value="" disabled selected>請選擇合作項目</option>
-                                <option value="performance">專案演出邀約</option>
-                                <option value="event">三隻青蛙</option>
-                                <option value="course">教學課程報名</option>
-                                <option value="other">其他合作</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="請簡述您的需求..." rows="4" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100">發送訊息</button>
-                    </form>
+                <!-- LINE 聯繫按鈕（大型，視覺突出） -->
+                <a href="#" class="btn btn-primary" style="
+                    display: inline-flex;
+                    align-items: center;
+                    gap: 14px;
+                    font-size: 1.3rem;
+                    padding: 20px 50px;
+                    background: #06C755;
+                    border-color: #06C755;
+                    border-radius: 50px;
+                    box-shadow: 0 8px 30px rgba(6,199,85,0.35);
+                    transition: transform 0.2s, box-shadow 0.2s;
+                " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 14px 40px rgba(6,199,85,0.45)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 30px rgba(6,199,85,0.35)'">
+                    <svg width="32" height="32" viewBox="0 0 48 48" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M24 4C12.95 4 4 11.82 4 21.5c0 6.15 3.89 11.56 9.79 14.77-.41 1.54-1.5 5.59-1.71 6.47-.27 1.09.4 1.08 1.07.63.55-.36 6.91-4.67 9.7-6.55.68.07 1.39.1 2.15.1 11.05 0 20-7.82 20-17.5S35.05 4 24 4z"/></svg>
+                    加入 LINE 官方帳號
+                </a>
+
+                <!-- 其他聯繫方式 -->
+                <div style="display: flex; justify-content: center; gap: 40px; margin-top: 50px; flex-wrap: wrap;">
+                    <a href="mailto:h123yes0112@gmail.com?subject=邀請一場奇幻旅程" style="display: flex; align-items: center; gap: 10px; color: var(--text-main); text-decoration: none; font-size: 1rem; transition: color 0.2s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-main)'">
+                        <span style="font-size: 1.4rem;">✉️</span> h123yes0112@gmail.com
+                    </a>
+                    <a href="tel:0917619613" style="display: flex; align-items: center; gap: 10px; color: var(--text-main); text-decoration: none; font-size: 1rem; transition: color 0.2s;" onmouseover="this.style.color='var(--primary)'" onmouseout="this.style.color='var(--text-main)'">
+                        <span style="font-size: 1.4rem;">📞</span> 0917-619-613 (葉團長)
+                    </a>
                 </div>
             </div>
         </div>
@@ -341,9 +384,12 @@
     <footer>
         <div class="container footer-content" style="border-bottom: none; padding-bottom: 20px;">
             <div class="social-links" style="margin-bottom: 0;">
-                <a href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbEV0MWl2cWdybG5TVnRRbndIbC1jQVFZVGdEZ3xBQ3Jtc0tuYlJDM19ZMDZ5TmpHMFVUeUtGa1VZMXJNMVRfU1hEcVB1a3Nqdkw4N0hkU041dFFJOC1tVk85QTM3MDN2Zk9zcnNzXy10MTVwNmxHSzRHY0U2b0kwVjRhNnRFampFTk01TkdDWC1QU3BhZGhSRTBqSQ&q=https%3A%2F%2Fwww.facebook.com%2FMryes2014%2F&v=eFeLFWOhbAI" target="_blank" aria-label="Facebook">FB</a>
-                <a href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa1hmYTdKcWxrcHRuck82enFsYTlXOGZGUUlTQXxBQ3Jtc0ttNTlRSzV0MDcwUlRCTFlrZHFvRnpoaWpFOEZHaWMyYkwtRmlfV3lyOTZLX1h0aW5LdTVQRHBONmFfOUVvd2c0eFMzU05QTWo5Z3F4NERUM0RkOFVWLWR4R19MX3hLZjZwczRqdnNFbjhUdUR3X1BvUQ&q=https%3A%2F%2Fwww.instagram.com%2Fmr.yes2019%2F%3Ffbclid%3DIwAR07N45704gG24rlGtPWuDV6WI01MZ8HssXe8o4bn1iuagrfGvAx8ErL8MY&v=eFeLFWOhbAI" target="_blank" aria-label="Instagram">IG</a>
-                <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fyoutube.com%2Fplaylist%3Flist%3DPLaAywsOGwXCqd4hu7_4pKjKCJ964OownR%26fbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExNXNvRXpLaFdIQklQTWVqTXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5JWB-LaIfRnnTuh_ZO9eMMMCGbNCl4TbJQEEj8Nt9McF3GQZ_W5OGQWn7h1g_aem_pQy2hZvilvUY8tiXKSr2LA&h=AUAtPWzsX8ADn63kVvc8HTKieZ9TqNkpq3gb3lL7Guhx61uSBQMizv2QJSXf4wuz2uMtK-CazAPys4CZyD2nxbTph0ygUBvbJRJV9BqsWPQMwD7aBbga0RThSZ-OJUNk-EF2" target="_blank" aria-label="YouTube">YT</a>
+                <a href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbEV0MWl2cWdybG5TVnRRbndIbC1jQVFZVGdEZ3xBQ3Jtc0tuYlJDM19ZMDZ5TmpHMFVUeUtGa1VZMXJNMVRfU1hEcVB1a3Nqdkw4N0hkU041dFFJOC1tVk85QTM3MDN2Zk9zcnNzXy10MTVwNmxHSzRHY0U2b0kwVjRhNnRFampFTk01TkdDWC1QU3BhZGhSRTBqSQ&q=https%3A%2F%2Fwww.facebook.com%2FMryes2014%2F&v=eFeLFWOhbAI"
+                    target="_blank" aria-label="Facebook">FB</a>
+                <a href="https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa1hmYTdKcWxrcHRuck82enFsYTlXOGZGUUlTQXxBQ3Jtc0ttNTlRSzV0MDcwUlRCTFlrZHFvRnpoaWpFOEZHaWMyYkwtRmlfV3lyOTZLX1h0aW5LdTVQRHBONmFfOUVvd2c0eFMzU05QTWo5Z3F4NERUM0RkOFVWLWR4R19MX3hLZjZwczRqdnNFbjhUdUR3X1BvUQ&q=https%3A%2F%2Fwww.instagram.com%2Fmr.yes2019%2F%3Ffbclid%3DIwAR07N45704gG24rlGtPWuDV6WI01MZ8HssXe8o4bn1iuagrfGvAx8ErL8MY&v=eFeLFWOhbAI"
+                    target="_blank" aria-label="Instagram">IG</a>
+                <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fyoutube.com%2Fplaylist%3Flist%3DPLaAywsOGwXCqd4hu7_4pKjKCJ964OownR%26fbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExNXNvRXpLaFdIQklQTWVqTXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR5JWB-LaIfRnnTuh_ZO9eMMMCGbNCl4TbJQEEj8Nt9McF3GQZ_W5OGQWn7h1g_aem_pQy2hZvilvUY8tiXKSr2LA&h=AUAtPWzsX8ADn63kVvc8HTKieZ9TqNkpq3gb3lL7Guhx61uSBQMizv2QJSXf4wuz2uMtK-CazAPys4CZyD2nxbTph0ygUBvbJRJV9BqsWPQMwD7aBbga0RThSZ-OJUNk-EF2"
+                    target="_blank" aria-label="YouTube">YT</a>
             </div>
         </div>
         <div class="footer-bottom">

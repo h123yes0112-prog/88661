@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三隻青蛙 | Mr.YES 小丑劇團</title>
+    <meta name="description" content="《三隻青蛙》——發想自繪本《一顆奇特的蛋》，以幼兒對世界的純真視角出發，結合小丑特技帶來充滿想像力的劇場體驗。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=2">
+    <style>
+        .detail-hero {
+            position: relative;
+            min-height: 55vh;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            background: var(--dark);
+        }
+        .detail-hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('圖片/青蛙/幻燈/文山14.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.5);
+            transform: scale(1.05);
+            transition: transform 8s ease-out;
+        }
+        .detail-hero-bg.loaded { transform: scale(1); }
+        .detail-hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 60px 20px 60px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .detail-hero-content .badge { margin-bottom: 20px; }
+        .detail-hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+        .detail-hero-content h1 span { color: var(--accent-green); }
+        .detail-hero-content p {
+            color: rgba(255,255,255,0.85);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin: 60px 0;
+        }
+        .info-card {
+            background: var(--white);
+            border: 3px solid var(--accent-green);
+            border-radius: var(--radius-md);
+            padding: 35px 25px;
+            text-align: center;
+            box-shadow: var(--shadow-solid);
+            transition: var(--transition);
+        }
+        .info-card:hover { transform: translateY(-5px); box-shadow: 6px 6px 0px rgba(74,63,53,0.15); }
+        .info-card .ic-icon { font-size: 2.5rem; margin-bottom: 12px; }
+        .info-card .ic-label { font-size: 0.85rem; color: rgba(74,63,53,0.55); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+        .info-card .ic-value { font-size: 1.15rem; font-weight: 900; font-family: var(--font-heading); color: var(--text-main); }
+
+        .story-section {
+            background: var(--white);
+            border: 4px dashed var(--accent-green);
+            border-radius: var(--radius-lg);
+            padding: 60px;
+            box-shadow: var(--shadow-solid);
+            margin-bottom: 60px;
+        }
+        .story-section h2 { font-family: var(--font-heading); font-size: 2rem; color: var(--accent-green); margin-bottom: 30px; }
+        .story-section p { font-size: 1.15rem; line-height: 2; color: var(--text-main); margin-bottom: 20px; }
+
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; margin-bottom: 60px; }
+        .feature-item {
+            background: var(--white);
+            border-left: 5px solid var(--accent-green);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 30px 30px 30px 35px;
+            box-shadow: var(--shadow-card);
+            transition: var(--transition);
+        }
+        .feature-item:hover { transform: translateX(5px); }
+        .feature-item .fi-icon { font-size: 2rem; margin-bottom: 15px; }
+        .feature-item h3 { font-family: var(--font-heading); font-size: 1.25rem; color: var(--accent-green); margin-bottom: 10px; }
+        .feature-item p { font-size: 1rem; color: rgba(74,63,53,0.8); line-height: 1.7; }
+
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 60px; }
+        .gallery-item { position: relative; border-radius: var(--radius-md); overflow: hidden; aspect-ratio: 4/3; box-shadow: var(--shadow-solid); border: 4px solid var(--white); }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .gallery-item:hover img { transform: scale(1.08); }
+
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: var(--radius-lg); box-shadow: var(--shadow-solid); border: 4px solid var(--white); margin-bottom: 60px; }
+        .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+        .back-bar { background: var(--darker); padding: 50px 0; text-align: center; }
+
+        .frog-title-img { display: block; margin: 0 auto 30px; max-width: 400px; width: 80%; }
+
+        @media (max-width: 768px) {
+            .story-section { padding: 35px 25px; }
+            .detail-hero-content h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo-wrapper">
+                <a href="index.html" class="brand-logo">
+                    <img src="images/001.png" alt="Mr.YES Logo" style="max-height: 160px;">
+                </a>
+                <img src="images/04.png" alt="Circus Decoration" class="logo-deco-04">
+            </div>
+            <nav class="nav-links">
+                <a href="index.html#about" class="nav-link">關於我們</a>
+                <a href="index.html#yepapa" class="nav-link">葉爸爸與葉霏霏</a>
+                <a href="index.html#threefrogs" class="nav-link">三隻青蛙</a>
+                <a href="index.html#yugong" class="nav-link">愚公移山</a>
+                <a href="index.html#contact" class="nav-link">合作邀約</a>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="detail-hero" style="padding-top: 80px;">
+        <div class="detail-hero-bg" id="heroBg"></div>
+        <div class="detail-hero-content">
+            <div class="badge" style="background: var(--accent-green);">🐸 人氣熱演</div>
+            <h1>三隻<span>青蛙</span></h1>
+            <p>從繪本到舞台——以孩子的眼睛看世界，在歡笑中學會接納不一樣的美好。</p>
+            <div class="cta-wrapper">
+                <a href="https://youtu.be/X12ojb3VNxc?si=KZHHx0N4_kPAdj0s" target="_blank" class="btn btn-primary">▶ 觀看演出精華</a>
+                <a href="index.html#contact" class="btn btn-outline">邀請演出</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 節目資訊 -->
+    <section class="section-padding" style="background: var(--darker);">
+        <div class="container">
+            <img src="圖片/青蛙/01.png" alt="三隻青蛙標題" class="frog-title-img reveal">
+            <div class="info-cards reveal">
+                <div class="info-card">
+                    <div class="ic-icon">🐣</div>
+                    <div class="ic-label">適合族群</div>
+                    <div class="ic-value">2歲以上 幼兒首選</div>
+                </div>
+                <div class="info-card">
+                    <div class="ic-icon">⏱️</div>
+                    <div class="ic-label">演出時長</div>
+                    <div class="ic-value">約 40–50 分鐘</div>
+                </div>
+                <div class="info-card">
+                    <div class="ic-icon">🎪</div>
+                    <div class="ic-label">演出形式</div>
+                    <div class="ic-value">劇場 / 親子空間</div>
+                </div>
+                <div class="info-card">
+                    <div class="ic-icon">📚</div>
+                    <div class="ic-label">發想來源</div>
+                    <div class="ic-value">繪本《一顆奇特的蛋》</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 演出故事 -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="story-section reveal">
+                <h2>📖 演出故事</h2>
+                <p>
+                    《三隻青蛙》的發想來自繪本《一顆奇特的蛋》（Extraordinary Egg）。繪本中，三隻青蛙在池塘邊發現了一顆「奇特的蛋」，每一隻青蛙都用自己所知道的方式來解釋那顆蛋——她們錯了嗎？其實，那只是牠們以自己的世界觀在認識這個世界。
+                </p>
+                <p>
+                    Mr.YES 將這個充滿哲學意味的故事轉化為馬戲語言：小丑扮演的青蛙們，面對一顆顏色形狀都陌生的球，開始了一段可愛又混亂的「科學研究」。那些天真的誤解，其實就是每個孩子在成長過程中最珍貴的好奇心。
+                </p>
+                <p>
+                    2023 年在臺北文山劇場首演，2025 年再度重製演出，深受幼兒園、親子中心及藝術節邀演，是 Mr.YES 劇團最具代表性的幼兒馬戲作品之一。
+                </p>
+            </div>
+
+            <h2 class="section-title reveal">演出 <span>亮點</span></h2>
+            <div class="features-grid">
+                <div class="feature-item reveal">
+                    <div class="fi-icon">🌈</div>
+                    <h3>豐富色彩視覺</h3>
+                    <p>大量運用繽紛色彩的道具，刺激幼兒視覺發展，讓小小眼睛停不下來。</p>
+                </div>
+                <div class="feature-item reveal" style="transition-delay:0.1s;">
+                    <div class="fi-icon">🧠</div>
+                    <h3>啟發認知思考</h3>
+                    <p>透過青蛙們的「錯誤」，引導孩子學會包容不同的看法，培養多元思維。</p>
+                </div>
+                <div class="feature-item reveal" style="transition-delay:0.2s;">
+                    <div class="fi-icon">😂</div>
+                    <h3>歡樂肢體喜劇</h3>
+                    <p>誇張的肢體語言讓孩子捧腹大笑，是幼兒最容易理解也最喜愛的表演形式。</p>
+                </div>
+                <div class="feature-item reveal" style="transition-delay:0.3s;">
+                    <div class="fi-icon">🤝</div>
+                    <h3>感統發展設計</h3>
+                    <p>演出設計融入感統刺激元素，透過聽覺、視覺的結合，支持幼兒全面感知發展。</p>
+                </div>
+            </div>
+
+            <!-- 演出影片 -->
+            <h2 class="section-title reveal">演出 <span>精華</span></h2>
+            <div class="video-wrapper reveal">
+                <iframe src="https://www.youtube.com/embed/X12ojb3VNxc" title="三隻青蛙 演出精華" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+
+            <!-- 劇照集錦 -->
+            <h2 class="section-title reveal">劇照 <span>集錦</span></h2>
+            <div class="gallery-grid">
+                <div class="gallery-item reveal">
+                    <img src="圖片/青蛙/幻燈/文山14.jpg" alt="三隻青蛙 演出劇照 1" loading="lazy">
+                </div>
+                <div class="gallery-item reveal" style="transition-delay:0.1s;">
+                    <img src="圖片/青蛙/幻燈/文山25.jpg" alt="三隻青蛙 演出劇照 2" loading="lazy">
+                </div>
+                <div class="gallery-item reveal" style="transition-delay:0.2s;">
+                    <img src="圖片/青蛙/幻燈/文山26.jpg" alt="三隻青蛙 演出劇照 3" loading="lazy">
+                </div>
+                <div class="gallery-item reveal" style="transition-delay:0.3s;">
+                    <img src="圖片/青蛙/幻燈/文山35.jpg" alt="三隻青蛙 演出劇照 4" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 返回 / 聯繫 -->
+    <div class="back-bar">
+        <div class="container">
+            <p style="font-size:1.1rem; color:rgba(74,63,53,0.7); margin-bottom:25px;">想邀請《三隻青蛙》到您的場地演出？</p>
+            <div class="cta-wrapper" style="justify-content:center;">
+                <a href="index.html#contact" class="btn btn-primary">立即邀約</a>
+                <a href="index.html" class="btn btn-outline">← 返回首頁</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content" style="border-bottom: none; padding-bottom: 20px;">
+            <div class="social-links" style="margin-bottom: 0;">
+                <a href="https://www.facebook.com/Mryes2014/" target="_blank" aria-label="Facebook">FB</a>
+                <a href="https://www.instagram.com/mr.yes2019/" target="_blank" aria-label="Instagram">IG</a>
+                <a href="https://youtube.com/playlist?list=PLaAywsOGwXCqd4hu7_4pKjKCJ964OownR" target="_blank" aria-label="YouTube">YT</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Mr.YES 小丑劇團 版權所有.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js?v=2"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const bg = document.getElementById('heroBg');
+            setTimeout(() => bg.classList.add('loaded'), 100);
+        });
+    </script>
+</body>
+</html>
