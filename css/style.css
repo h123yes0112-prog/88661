@@ -166,6 +166,14 @@ h4 {
     margin-top: 2rem;
 }
 
+/* CTA Button Wrapper */
+.cta-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
 /* --- Navbar --- */
 .navbar {
     position: fixed;
@@ -1141,6 +1149,63 @@ footer {
 }
 
 /* --- Responsive --- */
+
+/* ===== 平板 (Tablet): 1024px 以下 ===== */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 24px;
+    }
+
+    .section-padding {
+        padding: 70px 0;
+    }
+
+    .hero-slider-center-wrapper {
+        width: 92%;
+    }
+
+    /* 關於我們、葉爸爸等雙欄 grid 在平板先縮小間距 */
+    .about-grid {
+        gap: 40px;
+    }
+
+    /* 愚公移山三欄改為單欄排列 */
+    .yugong-tricolumn {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    .yugong-tricolumn > div[style*="aspect-ratio: 3/4"] {
+        aspect-ratio: 16/9 !important;
+        max-height: 320px;
+    }
+
+    /* 服務區塊 */
+    .services-grid {
+        gap: 24px;
+    }
+
+    .service-block {
+        padding: 36px;
+    }
+
+    /* 活動 banner */
+    .event-banner {
+        padding: 40px;
+        gap: 30px;
+    }
+
+    /* 事件標題縮小 */
+    .event-content h2 {
+        font-size: 2.6rem;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+    }
+}
+
+/* ===== 992px 以下 ===== */
 @media (max-width: 992px) {
 
     .hero-grid,
@@ -1151,8 +1216,17 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .about-image-wrapper {
+        height: 360px;
+    }
+
     .event-banner {
-        padding: 40px;
+        padding: 36px;
     }
 
     .contact-info,
@@ -1169,12 +1243,46 @@ footer {
     }
 }
 
+/* ===== 手機 (Mobile): 768px 以下 ===== */
 @media (max-width: 768px) {
+
+    html {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    /* --- Navbar --- */
+    .navbar {
+        padding: 12px 0;
+    }
+
+    .navbar .container {
+        padding: 0 16px;
+    }
+
+    /* Logo 圖片縮小 */
+    .brand-logo img {
+        max-height: 80px !important;
+    }
+
+    /* 手機選單按鈕顯示 */
     .mobile-menu-btn {
         display: flex;
         z-index: 1001;
     }
 
+    .mobile-menu-btn span {
+        background: var(--text-main);
+    }
+
+    /* 側滑選單 */
     .nav-links {
         position: fixed;
         top: 0;
@@ -1185,21 +1293,265 @@ footer {
         background: var(--dark);
         flex-direction: column;
         justify-content: center;
-        transition: var(--transition);
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        align-items: center;
+        gap: 20px;
+        transition: right 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        box-shadow: -10px 0 40px rgba(0, 0, 0, 0.15);
+        border-left: 3px dashed var(--secondary);
+        padding: 20px;
+        z-index: 1000;
     }
 
     .nav-links.active {
         right: 0;
     }
 
+    .nav-link {
+        font-size: 1.15rem;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+        padding-top: 100px;
+        padding-bottom: 30px;
+        min-height: auto;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0;
+    }
+
+    .hero-slider-center-wrapper {
+        width: 96%;
+        border-width: 4px;
+        border-radius: var(--radius-md);
+        position: relative;
+        margin: 0 auto;
+    }
+
+    /* Hero 底部按鈕移出幻燈片外，顯示在下方 */
+    .hero-center-cta {
+        position: static;
+        transform: none;
+        justify-content: center;
+        margin-top: 20px;
+        flex-wrap: wrap;
+        gap: 12px;
+        padding-bottom: 20px;
+    }
+
+    /* 貼紙隱藏，避免擋內容 */
+    .hero-sticker {
+        display: none;
+    }
+
+    /* 跑馬燈文字縮小 */
+    .hero-marquee-content {
+        font-size: 0.9rem;
+    }
+
+    /* --- Section Titles --- */
+    .section-title {
+        font-size: 1.9rem;
+        margin-bottom: 30px;
+    }
+
+    /* --- About Section --- */
+    .about-grid {
+        grid-template-columns: 1fr !important;
+        gap: 28px;
+    }
+
+    .about-image-wrapper {
+        height: 280px;
+        min-height: 260px !important;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+
+    /* 歷年演出左圖在手機隱藏，節省空間 */
+    .about-grid .about-image-wrapper.reveal-left {
+        display: none;
+    }
+
+    /* --- 葉爸爸 / 三隻青蛙 / 愚公移山 --- */
+    /* 三隻青蛙 event-banner */
+    .event-banner {
+        padding: 24px 16px;
+        border-radius: var(--radius-md);
+        gap: 20px;
+    }
+
+    .event-content h2 {
+        font-size: 2rem;
+    }
+
+    /* 三隻青蛙標題圖片 */
+    .event-banner img[src*="青蛙"] {
+        width: 100% !important;
+    }
+
+    /* 愚公移山三欄 → 單欄 */
+    .yugong-tricolumn {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        margin: 30px 0 !important;
+    }
+
+    /* 左右照片在手機改為橫向比例 */
+    .yugong-tricolumn > div[style*="aspect-ratio: 3/4"] {
+        aspect-ratio: 16/9 !important;
+        max-height: 240px;
+    }
+
+    /* --- 服務區塊 --- */
     .services-grid {
         grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .service-block {
+        padding: 30px 20px;
+    }
+
+    .service-block h3 {
+        font-size: 1.6rem;
+    }
+
+    /* --- 按鈕 --- */
+    .btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+
+    .cta-wrapper {
+        gap: 10px;
+    }
+
+    /* --- 聯絡區段 --- */
+    .contact-info,
+    .contact-form-wrapper {
+        padding: 30px 20px;
+    }
+
+    .contact-info h2 {
+        font-size: 2rem;
+    }
+
+    /* --- 頁尾 --- */
+    footer {
+        padding: 50px 0 0;
     }
 
     .footer-content {
         flex-direction: column;
-        gap: 30px;
+        gap: 24px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    /* --- 浮動音樂按鈕下移 --- */
+    .music-toggle-btn {
+        bottom: 20px;
+        right: 16px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+/* ===== 小型手機: 480px 以下 ===== */
+@media (max-width: 480px) {
+
+    html {
+        font-size: 14px;
+    }
+
+    .section-padding {
+        padding: 50px 0;
+    }
+
+    /* Logo 再縮小 */
+    .brand-logo img {
+        max-height: 60px !important;
+    }
+
+    /* Hero */
+    .hero {
+        padding-top: 80px;
+    }
+
+    .hero-slider-center-wrapper {
+        width: 100%;
+        border-radius: var(--radius-sm);
+        border-width: 3px;
+    }
+
+    .hero-center-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-center-cta .btn {
+        width: 80%;
+        text-align: center;
+    }
+
+    /* 標題 */
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    /* 關於我們 */
+    .about-image-wrapper {
+        height: 220px;
+    }
+
+    /* 三隻青蛙 event-banner */
+    .event-banner {
+        padding: 18px 12px;
+        border-radius: var(--radius-sm);
+    }
+
+    .event-content h2 {
+        font-size: 1.7rem;
+    }
+
+    /* 服務區塊 */
+    .service-block {
+        padding: 24px 16px;
+    }
+
+    .icon-wrapper {
+        font-size: 3rem;
+    }
+
+    /* 聯絡按鈕 (LINE) */
+    a[href="#"].btn-primary[style*="#06C755"] {
+        font-size: 1.1rem !important;
+        padding: 16px 28px !important;
+    }
+
+    /* 聯絡資訊橫向排列改為縱向 */
+    div[style*="justify-content: center"][style*="gap: 40px"] {
+        flex-direction: column !important;
+        gap: 20px !important;
+        align-items: center;
+    }
+
+    /* 頁尾 banner 圖片 */
+    .footer-banner-full img {
+        min-height: 120px;
+        object-fit: cover;
     }
 }
 

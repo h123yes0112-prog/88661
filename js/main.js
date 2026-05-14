@@ -39,6 +39,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Close mobile menu when clicking outside (overlay)
+    document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('active') &&
+            !navLinks.contains(e.target) &&
+            !mobileBtn.contains(e.target)) {
+            mobileBtn.click();
+        }
+    });
+
+    // Reset mobile menu when resizing to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+            mobileBtn.click();
+        }
+    });
+
     // --- Scroll Reveal Animation ---
     const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
